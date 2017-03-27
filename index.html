@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Card Tracking System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-select.min.css">
+        <script src="lib/js/jquery.min.js"></script>       
+        <script src="lib/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="lib/js/webqr.js"></script>
+        <script type="text/javascript" src="lib/js/llqrcode.js"></script>
+        <script type="text/javascript" src="lib/js/bootstrap-select.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="lib/css/mystyle.css">
+        <script type="text/javascript" src="lib/js/logic.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h2>AF Access Pass Card Tracking System</h2>
+            </div>
+            <img src="lib/img/SUSS.png" alt="SUSS Logo" width="344px" height="70px">
+            <p></p><p></p>
+            <div class="row">
+                <div class="col-md-4">                    
+                    <div class="alert alert-danger" role="alert" id="errbox">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span>
+                        Please check your inputs....
+                    </div> 
+                    <div class="alert alert-success" role="alert" id="successbox">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        <span class="sr-only">Success:</span>
+                        You have successfully submitted the entry.....
+                    </div>
+                    <p><p><p><p>
+                    <form id="form1" method="post">
+                        <div class="form-group">
+                            <label for="staffname">Staff Name: </label>
+                            <select class="form-control" required id="staff" name="staffselect">
+                                <option value=""></option>
+                                <option value="Alan">Alan</option>
+                                <option value="He Jiang">He Jiang</option>
+                                <option value="Rosly">Rosly</option>
+                                <option value="Fazil" >Fazil</option>
+                                <option value="Siti">Siti</option>
+                                <option value="Deryk">Deryk</option>
+                                <option value="Yiu">Yiu</option>                               
+                            </select>                            
+                        </div>
+                        <div class="form-group">
+                            <label for="afname">AF Name: </label>
+                            <select class="selectpicker form-control" data-live-search="true" id="afname" required>
+                                <option value='' ></option>
+                                <option value='Alvin Chan Chek Horng'>Alvin Chan Chek Horng</option>
+                                <option value='Bang Toong Kiang'>Bang Toong Kiang</option>
+                                <option value='Carl Chan'>Carl Chan</option>
+                                <option value='Chang Hengky'>Chang Hengky</option>
+                                <option value='Cheah Chi Mun'>Cheah Chi Mun</option>
+                                <option value='Cheok Lay Ngor'>Cheok Lay Ngor</option>
+                                <option value='David Hee Ta Wei'>David Hee Ta Wei</option>
+                                <option value='Erwin Chan'>Erwin Chan</option>
+                                <option value='Freeman Yu'>Freeman Yu</option>
+                                <option value='Fung Chi Fung'>Fung Chi Fung</option>
+                                <option value='Jeyaraj Selva Raj'>Jeyaraj Selva Raj</option>
+                                <option value='Jeyaseelan Gnana Sigamoni Thomas'>Jeyaseelan Gnana Sigamoni Thomas</option>
+                                <option value='Kam Boon Horng'>Kam Boon Horng</option>                             
+                                <option value='Koh Pak Keng'>Koh Pak Keng</option>
+                                <option value='Ler Ser Yeng'>Ler Ser Yeng</option>
+                                <option value='Loh Hoo Chong'>Loh Hoo Chong</option>
+                                <option value='Low Bao Can, Samuel'>Low Bao Can, Samuel</option>
+                                <option value='Low Wai Ping'>Low Wai Ping</option>
+                                <option value='Lu Liru'>Lu Liru</option>
+                                <option value='Mohan Rajesh Elara'>Mohan Rajesh Elara</option>
+                                <option value='Nah Kiat Gee'>Nah Kiat Gee</option>
+                                <option value='Ng Yuwen Stella'>Ng Yuwen Stella</option>
+                                <option value='Ong Hsueh Min David'>Ong Hsueh Min David</option>
+                                <option value='Ooi Chui Ping'>Ooi Chui Ping</option>
+                                <option value='Rajena Acharya'>Rajena Acharya</option>
+                                <option value='Ravinder Singh'>Ravinder Singh</option>
+                                <option value='Sarita Singh'>Sarita Singh</option>
+                                <option value='Seow Chee Kiat'>Seow Chee Kiat</option>
+                                <option value='Soon Kim Tat'>Soon Kim Tat</option>
+                                <option value='Teoh Yee Leong'>Teoh Yee Leong</option>
+                                <option value='Thong Chee Chung'>Thong Chee Chung</option>
+                                <option value='V V Moorthy'>V V Moorthy</option>
+                                <option value='Vivek Sehgal'>Vivek Sehgal</option>
+                                <option value='Willam Phay'>Willam Phay</option>
+                                <option value='Willie Chan'>Willie Chan</option>
+                                <option value='Zhong Liang'>Zhong Liang</option>
+                                <option value='Tan Soon Huat'>Tan Soon Huat</option>
+                                <option value='Alphonsus Ee'>Alphonsus Ee</option>
+                                <option value='Ang Yu Qian'>Ang Yu Qian</option>
+                                <option value='Chan Mun Lock Gilbert'>Chan Mun Lock Gilbert</option>
+                                <option value='Cheah Chi Mun'>Cheah Chi Mun</option>
+                                <option value='Chew Chin Hui, Davis'>Chew Chin Hui, Davis</option>
+                                <option value='Chin Sai Kong'>Chin Sai Kong</option>
+                                <option value='Chow Kok Onn'>Chow Kok Onn</option>
+                                <option value='Chow Miew Sek'>Chow Miew Sek</option>
+                                <option value='Christina Vilaire'>Christina Vilaire</option>
+                                <option value='Chu Pau Wah'>Chu Pau Wah</option>
+                                <option value='Chua Bee Gee'>Chua Bee Gee</option>
+                                <option value='Chua Ming Sing'>Chua Ming Sing</option>
+                                <option value='Deny Rahardjo'>Deny Rahardjo</option>
+                                <option value='Dhingra Jag Mohan'>Dhingra Jag Mohan</option>
+                                <option value='Diana Lai Ngiik Chui'>Diana Lai Ngiik Chui</option>
+                                <option value='Dr Khoo Eng Tat'>Dr Khoo Eng Tat</option>
+                                <option value='Edward Han'>Edward Han</option>
+                                <option value='Faith Lee'>Faith Lee</option>
+                                <option value='Feng Feiling'>Feng Feiling</option>
+                                <option value='Gan Chee Kwan'>Gan Chee Kwan</option>
+                                <option value='Gerard Heng'>Gerard Heng</option>
+                                <option value='Goh Ngan Hong'>Goh Ngan Hong</option>
+                                <option value='Goh-Tan Chor Luan'>Goh-Tan Chor Luan</option>
+                                <option value='Han Fund Siew Edward'>Han Fund Siew Edward</option>
+                                <option value='Ho Siong Lin'>Ho Siong Lin</option>
+                                <option value='Indhu Mohan'>Indhu Mohan</option>
+                                <option value='John Chan Kok Wah'>John Chan Kok Wah</option>
+                                <option value='Jonathan Foo Jon Chung'>Jonathan Foo Jon Chung</option>
+                                <option value='Kelvin Ng Yu Ngee'>Kelvin Ng Yu Ngee</option>
+                                <option value='Kisenchand S/O Nathumal'>Kisenchand S/O Nathumal</option>
+                                <option value='Koh Wee Ming'>Koh Wee Ming</option>
+                                <option value='Kuan Kok Oon Peter'>Kuan Kok Oon Peter</option>
+                                <option value='Kwa Teck Poey'>Kwa Teck Poey</option>
+                                <option value='Lam Chit Cherng Gene Vincent'>Lam Chit Cherng Gene Vincent</option>
+                                <option value='Lee Dan Ching'>Lee Dan Ching</option>
+                                <option value='Ler Ser Ying'>Ler Ser Ying</option>
+                                <option value='Liew Hui Sing'>Liew Hui Sing</option>
+                                <option value='Lim Cher Yam'>Lim Cher Yam</option>
+                                <option value='Lim Kin Hock'>Lim Kin Hock</option>
+                                <option value='Lim Yaw Shyan'>Lim Yaw Shyan</option>
+                                <option value='Muhammad Hafizur Rahman'>Muhammad Hafizur Rahman</option>
+                                <option value='Mukherjee Shib Nath'>Mukherjee Shib Nath</option>
+                                <option value='Nawal Jaggi'>Nawal Jaggi</option>
+                                <option value='Ng Kok Seng'>Ng Kok Seng</option>
+                                <option value='Ng Sok Fern'>Ng Sok Fern</option>
+                                <option value='Ng Wee Chert Josh'>Ng Wee Chert Josh</option>
+                                <option value='Ng Wee Tong'>Ng Wee Tong</option>
+                                <option value='Ng Yaw Tong'>Ng Yaw Tong</option>
+                                <option value='Ng Yuwen Stella'>Ng Yuwen Stella</option>
+                                <option value='Ong Pang Soon'>Ong Pang Soon</option>
+                                <option value='Ong Yong Wah Noel'>Ong Yong Wah Noel</option>
+                                <option value='Pang Nia Kiat'>Pang Nia Kiat</option>
+                                <option value='Poo Gee Swee'>Poo Gee Swee</option>
+                                <option value='Quek Wei Ching'>Quek Wei Ching</option>
+                                <option value='Rajandran s/o Veerappan'>Rajandran s/o Veerappan</option>
+                                <option value='Rajesree Ramasamy'>Rajesree Ramasamy</option>
+                                <option value='Richard Chang'>Richard Chang</option>
+                                <option value='Royal Naidu Radakrishnan'>Royal Naidu Radakrishnan</option>
+                                <option value='Siow Sook Min Pamela'>Siow Sook Min Pamela</option>
+                                <option value='Soh Wee Lian'>Soh Wee Lian</option>
+                                <option value='Steven Yee Pui Chung'>Steven Yee Pui Chung</option>
+                                <option value='Tan Kim Leong'>Tan Kim Leong</option>
+                                <option value='Tan Meng Choon'>Tan Meng Choon</option>
+                                <option value='Tan Shia Tew'>Tan Shia Tew</option>
+                                <option value='Tan Teng Hooi'>Tan Teng Hooi</option>
+                                <option value='Tan Tiong Gay Dennis'>Tan Tiong Gay Dennis</option>
+                                <option value='Tan Yew Yaw Jim'>Tan Yew Yaw Jim</option>
+                                <option value='Teh Yong Liang'>Teh Yong Liang</option>
+                                <option value='Tian Jing'>Tian Jing</option>
+                                <option value='Wendy Chiew Chooi Leng'>Wendy Chiew Chooi Leng</option>
+                                <option value='Willie Chan'>Willie Chan</option>
+                                <option value='Wong Yoke Moon'>Wong Yoke Moon</option>
+                                <option value='Yip Kim Seng'>Yip Kim Seng</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mode">Mode:</label>
+                            <div id="iss">
+                                <button class="btn btn-outline-primary" type="button" id="iss1" value="Issue">Issue Card</button>
+                                <!--
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" value="Issue" checked >Issue Card
+                                </label>
+                                -->
+                            </div>
+                            <div id="rtn">
+                                <button class="btn btn-outline-primary" type="button" id="rtn1" value="Return">Return Card</button>
+                                <!--
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" value="Return" checked >Return Card
+                                </label>
+                                -->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="qrcode">QR Code:</label>
+                            <span id="result"></span>
+                        </div>
+                        <div class="row">
+                            <table class="tsel" border="0" width="100%">
+                                <tr>
+                                    <td valign="top" align="center" width="50%">
+                                        <table class="tsel" border="0">
+                                            <tr>
+                                                <td><img class="selector" id="webcamimg" src="lib/img/scan.jpg" onclick="setwebcam()" align="left" /></td>
+                                                <td><img class="selector" id="qrimg" onclick="setimg()" align="right"/></td>
+                                            </tr>
+
+                                            <tr><td colspan="2" align="center">
+                                                    <div id="outdiv">
+                                                    </div></td></tr>
+                                        </table>
+                                    </td>
+                                </tr>                                                              
+                            </table>
+                            <p>
+
+                        </div>
+                        <button type="button" id="submitbtn" class="btn btn-success" onclick="press()">Submit</button>&nbsp;&nbsp;<button type="button" id="clearbtn" class="btn btn-primary" onclick="clearField()">Clear</button>
+                    </form>
+                    <canvas id="qr-canvas" width="800" height="600"></canvas>
+                    <script type="text/javascript">load();</script>
+                </div>
+            </div>
+            <div class="row">
+                <hr>
+                &copy; 2017 Singapore University of Social Sciences (School of Science &amp; Technology). All Rights reserved.
+            </div>
+        </div>
+    </body>
+</html>
